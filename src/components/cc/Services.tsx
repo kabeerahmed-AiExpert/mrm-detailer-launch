@@ -138,7 +138,6 @@ export function Services() {
             </motion.div>
           </motion.div>
         )}
-      </div>
       </AnimatePresence>
     </section>
   );
