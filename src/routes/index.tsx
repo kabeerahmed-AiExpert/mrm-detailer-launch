@@ -1,24 +1,67 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Navbar } from "@/components/cc/Navbar";
+import { Hero } from "@/components/cc/Hero";
+import { Work } from "@/components/cc/Work";
+import { Services } from "@/components/cc/Services";
+import { Protection } from "@/components/cc/Protection";
+import { Process } from "@/components/cc/Process";
+import { Contact } from "@/components/cc/Contact";
+import { MobileBar } from "@/components/cc/MobileBar";
+import { Loader } from "@/components/cc/Loader";
+import { BUSINESS } from "@/lib/cc/data";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const TITLE = "MRM Car Detailing | PPF, Ceramic Coating & Detailing in Karachi";
+const DESCRIPTION =
+  "MRM Car Detailing in Karachi — paint protection film, ceramic and graphene coatings, vinyl wrapping, paint correction and full interior and exterior detailing. Message us on WhatsApp for a quote.";
+
 export const Route = createFileRoute("/")({
   component: Index,
+  head: () => ({
+    meta: [
+      { title: TITLE },
+      { name: "description", content: DESCRIPTION },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESCRIPTION },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "/" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "AutoDetailing",
+          name: BUSINESS.name,
+          description: DESCRIPTION,
+          telephone: BUSINESS.phoneIntl,
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: BUSINESS.city,
+            addressCountry: "PK",
+          },
+          areaServed: BUSINESS.city,
+        }),
+      },
+    ],
+  }),
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <>
+      <Loader />
+      <Navbar />
+      <main>
+        <Hero />
+        <Work />
+        <Services />
+        <Protection />
+        <Process />
+        <Contact />
+      </main>
+      <MobileBar />
+    </>
   );
 }
