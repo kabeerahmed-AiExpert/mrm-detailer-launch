@@ -178,10 +178,24 @@
 @utility chrome-text {
   background-image: linear-gradient(
     100deg,
-    var(--chrome-deep),
-    var(--chrome) 42%,
-    oklch(1 0 0) 58%,
-    var(--chrome-deep)
+    var(--brand-deep),
+    var(--brand) 42%,
+    oklch(0.95 0.09 92) 58%,
+    var(--brand-deep)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Alias so gold-named classes from the original design keep working. */
+@utility gold-text {
+  background-image: linear-gradient(
+    100deg,
+    var(--brand-deep),
+    var(--brand) 42%,
+    oklch(0.95 0.09 92) 58%,
+    var(--brand-deep)
   );
   -webkit-background-clip: text;
   background-clip: text;
