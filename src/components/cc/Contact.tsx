@@ -1,5 +1,5 @@
 import { MessageCircle, Phone, MapPin } from "lucide-react";
-import { BUSINESS, NAV_LINKS, telLink, whatsappLink } from "@/lib/cc/data";
+import { BUSINESS, DEVELOPER, NAV_LINKS, SOCIALS, telLink, whatsappLink } from "@/lib/cc/data";
 import { IMG } from "@/lib/cc/assets";
 import { BrandLink } from "./ChromeButton";
 import { Reveal, SectionLabel } from "./Reveal";
