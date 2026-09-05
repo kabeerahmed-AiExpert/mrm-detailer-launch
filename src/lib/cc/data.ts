@@ -1,4 +1,5 @@
 import { IMG } from "./assets";
+import agenticLogo from "@/assets/agentic-softwares-logo.png.asset.json";
 
 export const BUSINESS = {
   name: "MRM Car Detailing",
@@ -9,6 +10,21 @@ export const BUSINESS = {
   phoneIntl: "+923422701703",
   whatsapp: "923422701703",
   tagline: "Premium car detailing, paint protection film and coatings.",
+} as const;
+
+export const SOCIALS = [
+  { id: "instagram", label: "Instagram", href: "https://www.instagram.com/mrmcardetailing/" },
+  { id: "facebook", label: "Facebook", href: "https://www.facebook.com/mrmcardetailing/" },
+  { id: "tiktok", label: "TikTok", href: "https://www.tiktok.com/@mrmcardetailing" },
+  { id: "youtube", label: "YouTube", href: "https://www.youtube.com/@mrmcardetailing" },
+] as const;
+
+export const DEVELOPER = {
+  name: "Agentic Softwares",
+  logo: agenticLogo.url,
+  phone: "+923166676053",
+  phoneDisplay: "+92 316 6676053",
+  instagram: "https://www.instagram.com/Agenticsoftwares/",
 } as const;
 
 /** WhatsApp deep link with an optional pre-filled message. */
