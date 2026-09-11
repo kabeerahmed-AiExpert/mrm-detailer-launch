@@ -13,7 +13,7 @@ export const BUSINESS = {
 } as const;
 
 export const SOCIALS = [
-  { id: "instagram", label: "Instagram", href: "https://www.instagram.com/mrmcardetailing/" },
+  { id: "instagram", label: "Instagram", href: "https://www.instagram.com/mrm.protection.detailing/" },
   { id: "facebook", label: "Facebook", href: "https://www.facebook.com/mrmcardetailing/" },
   { id: "tiktok", label: "TikTok", href: "https://www.tiktok.com/@mrmcardetailing" },
   { id: "youtube", label: "YouTube", href: "https://www.youtube.com/@mrmcardetailing" },
